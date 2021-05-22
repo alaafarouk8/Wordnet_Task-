@@ -20,16 +20,12 @@ def getWord(words):
     else:
         print(words + " is not a cat or dog")
             
-
 getWord('working_dog')
 getWord('king')
 getWord('domestic_cat')
 getWord('poodle')
-getWord('wild')
 getWord('leonberg')
 getWord('puppy')
-getWord('dalmatian')
-syn = wordnet.synsets('dog')[0]
-print(syn.hyponyms())
+
 
 
