@@ -36,8 +36,11 @@ print (getWord(w, a))
      
 
 """
-getWord('working_dog','working_dog')
-getWord('domestic_cat','domestic_cat')
-getWord('wildcat','wildcat')
+getWord('working_dog')
+getWord('king')
+getWord('domestic_cat')
+getWord('poodle')
+getWord('leonberg')
+getWord('puppy')
 
 """
