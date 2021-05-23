@@ -16,14 +16,15 @@ def getWord(k,w):
     for ss in w:
         for hyper in ss.hypernyms():         
               if (hyper.name() == cat):
-                  print(k + " is a cat")
+                  print(k + ' is a cat')
               elif (hyper.name()==dog):
-                  print(k + " is a dog")
+                  print(k + 'is a dog')
               elif (hyper.name()==entity):
                   print(k + " is not a dog or a cat")  
               else:  
-                   return getWord(k,hyper.hypernyms())
+                  return getWord(k,hyper.hypernyms())
 
+getWord('wildcat',wordnet.synsets('wildcat'))
 getWord('king',wordnet.synsets('king'))
 getWord('working_dog',wordnet.synsets('working_dog'))
 getWord('domestic_cat',wordnet.synsets('domestic_cat'))
