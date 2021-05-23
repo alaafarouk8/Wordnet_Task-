@@ -13,21 +13,31 @@ dog = 'dog.n.01'
 entity = 'entity.n.01'
 
 def getWord(k,w):
-    for ss in w:
-        for hyper in ss.hypernyms():         
+    for syn in w:
+        for hyper in syn.hypernyms(): 
               if (hyper.name() == cat):
-                  print(k + ' is a cat')
+                  return k + " is a cat"
               elif (hyper.name()==dog):
-                  print(k + 'is a dog')
-              elif (hyper.name()==entity):
-                  print(k + " is not a dog or a cat")  
-              else:  
-                  return getWord(k,hyper.hypernyms())
+                  return k + " is a dog"
+              else:
+                   for i in hyper.hypernyms():
+                       if (i.name() == cat):
+                           return k + " is a cat"
+                       elif (i.name()==dog):
+                           return k + " is a dog"
+                       
+    return k + " is not a dog or a cat" 
+    
+   
+w = input("enter word: ")
+a = wordnet.synsets(w)  
+print (getWord(w, a))  
 
-getWord('wildcat',wordnet.synsets('wildcat'))
-getWord('king',wordnet.synsets('king'))
-getWord('working_dog',wordnet.synsets('working_dog'))
-getWord('domestic_cat',wordnet.synsets('domestic_cat'))
+     
 
+"""
+getWord('working_dog','working_dog')
+getWord('domestic_cat','domestic_cat')
+getWord('wildcat','wildcat')
 
-
+"""
